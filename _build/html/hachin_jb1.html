@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>how to create the Jupyter Book &#8212; My sample book</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Vitae" href="myvitae.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="myvitae.html">
+   Vitae
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   how to create the Jupyter Book
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fhachin_jb1.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/hachin_jb1.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-the-content-here-has-been-benefited-from-multiple-sources-but-mostly-from-jupyterbook-org-juyter-book-is-open-sourced-by-the-executablebooksproject-an-international-collaboration-to-build-open-source-tools-that-facilitate-publishing-computational-narratives-using-the-jupyter-ecosystem">
+   Note:
+   <em>
+    the content here has been benefited from multiple sources, but mostly from jupyterbook.org
+   </em>
+   . Juyter Book is open-sourced by the ExecutableBooksProject, “an international collaboration to build open source tools that facilitate publishing computational narratives using the Jupyter ecosystem.”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-jupyter-book">
+   Install Jupyter Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-your-book">
+   Build your book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-an-online-repository-for-your-book">
+   Create an online repository for your book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publish-your-book-online-with-github-pages">
+   Publish your book online with GitHub Pages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#features">
+   Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tech">
+   Tech
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plugins">
+   Plugins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>how to create the Jupyter Book</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#note-the-content-here-has-been-benefited-from-multiple-sources-but-mostly-from-jupyterbook-org-juyter-book-is-open-sourced-by-the-executablebooksproject-an-international-collaboration-to-build-open-source-tools-that-facilitate-publishing-computational-narratives-using-the-jupyter-ecosystem">
+   Note:
+   <em>
+    the content here has been benefited from multiple sources, but mostly from jupyterbook.org
+   </em>
+   . Juyter Book is open-sourced by the ExecutableBooksProject, “an international collaboration to build open source tools that facilitate publishing computational narratives using the Jupyter ecosystem.”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#install-jupyter-book">
+   Install Jupyter Book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#build-your-book">
+   Build your book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#create-an-online-repository-for-your-book">
+   Create an online repository for your book
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#publish-your-book-online-with-github-pages">
+   Publish your book online with GitHub Pages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#features">
+   Features
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tech">
+   Tech
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plugins">
+   Plugins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license">
+   License
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="how-to-create-the-jupyter-book">
+<h1>how to create the Jupyter Book<a class="headerlink" href="#how-to-create-the-jupyter-book" title="Permalink to this headline">#</a></h1>
+<section id="note-the-content-here-has-been-benefited-from-multiple-sources-but-mostly-from-jupyterbook-org-juyter-book-is-open-sourced-by-the-executablebooksproject-an-international-collaboration-to-build-open-source-tools-that-facilitate-publishing-computational-narratives-using-the-jupyter-ecosystem">
+<h2>Note: <em>the content here has been benefited from multiple sources, but mostly from <a class="reference external" href="http://jupyterbook.org">jupyterbook.org</a></em>. Juyter Book is open-sourced by the <a class="reference external" href="https://executablebooks.org/en/latest/">ExecutableBooksProject</a>, “an international collaboration to build open source tools that facilitate publishing computational narratives using the Jupyter ecosystem.”<a class="headerlink" href="#note-the-content-here-has-been-benefited-from-multiple-sources-but-mostly-from-jupyterbook-org-juyter-book-is-open-sourced-by-the-executablebooksproject-an-international-collaboration-to-build-open-source-tools-that-facilitate-publishing-computational-narratives-using-the-jupyter-ecosystem" title="Permalink to this headline">#</a></h2>
+<p>ExecutableBooksProjct uses <a class="reference external" href="https://executablebooks.org/en/latest/tools.html">several tools</a> for Jupyter book, including Sphinx, MyST, Jupyter Cache, Markdown-it-py.
+I also use the Dillinger which is a cloud-enabled, mobile-ready, offline-storage compatible, AngularJS-powered HTML5 Markdown editor.</p>
+<p><a class="reference external" href="https://jupyterbook.org/en/stable/intro.html"><img alt="N|Solid" src="https://jupyterbook.org/en/stable/_static/logo-wide.svg" /></a></p>
+<p><a class="reference external" href="https://travis-ci.org/joemccann/dillinger"><img alt="Build Status" src="https://travis-ci.org/joemccann/dillinger.svg?branch=master" /></a></p>
+<p>My Texas State University web page is at <a class="reference external" href="https://hachinyi.wp.txstate.edu">here</a>.</p>
+<p><strong>Jupyter Book</strong> is a cloud-based publishing capability for any kinds of contents. Here, I am about to create the book for my students in Texas State University to teach Python, Finance, Economis, Data Science, Econometrics, and other subjects.</p>
+</section>
+<section id="install-jupyter-book">
+<h2>Install Jupyter Book<a class="headerlink" href="#install-jupyter-book" title="Permalink to this headline">#</a></h2>
+<p>You can install Jupyter Book via pip:
+<strong><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">jupyter-book</span></code></strong>
+or via conda-forge:
+<strong><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">jupyter-book</span></code></strong>
+This will install everything you need to build a Jupyter Book locally.</p>
+<p>Jupyter Book comes bundled with a lightweight <em>sample book</em> to help you understand a book’s structure. Again, this is just a sample book. Create a sample book by running the following command:
+<strong><code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">create</span> <span class="pre">mynewbook/</span></code></strong></p>
+<p>This will generate a mini Jupyter Book that you can both build and explore locally. It will have a few decisions made for you, and you can explore the configuration of the book in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> and its structure in <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>. Use this book as as a starting point to work from.</p>
+<p>There are three things that you need in order to build a Jupyter Book, each of which was just created by running <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">create</span></code>:</p>
+<ol class="simple">
+<li><p>A configuration file (<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>)</p></li>
+<li><p>A table of contents file (<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>)</p></li>
+<li><p>Your book’s content</p></li>
+</ol>
+<p>A typical book strucuture looks like:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ tree mybookname
+mybookname/
+├── _config.yml
+├── _toc.yml
+├── intro.md
+├── logo.png
+├── markdown-notebooks.md
+├── markdown.md
+├── notebooks.ipynb
+├── references.bib
+└── requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="build-your-book">
+<h2>Build your book<a class="headerlink" href="#build-your-book" title="Permalink to this headline">#</a></h2>
+<p>Once you’ve added content and configured your book, it’s time to build outputs for your book. We’ll use the <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span></code> command line tool for this.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="n">mybookname</span>
+</pre></div>
+</div>
+<p><strong>Important:</strong> This will generate a fully-functioning HTML site using a static site generator. The site will be placed in the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder, something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mybookname
+ └──_build
+    └── html
+       ├── _images
+       ├── _static
+       ├── index.html
+       ├── intro.html
+       ...
+</pre></div>
+</div>
+<p>These are the static files for a standalone website! They contain the HTML and all assets needed to view your book in a browser.
+You can open the pages in the site by navigating to that folder and opening the html files with your web browser.</p>
+<blockquote>
+<div><p>key points</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Jupyter Book uses markdown files to create chapters of an online book. In this tutorial, these files are placed in a directory called <code class="docutils literal notranslate"><span class="pre">mybookname</span></code>.</p></li>
+<li><p>All the images used in the file should also be stored in <code class="docutils literal notranslate"><span class="pre">mybookname</span></code>.</p></li>
+<li><p>References used in the book should be stored in a <code class="docutils literal notranslate"><span class="pre">references.bib</span></code> file, which should also be stored in book</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> should be generated inside the folder book to structure the jupyter Book (toc is abbreviation for table of content)</p></li>
+<li><p>With these files in place, you can create a minimal book using the command <code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">{path-to-book}</span></code></p></li>
+</ul>
+</section>
+<section id="create-an-online-repository-for-your-book">
+<h2>Create an online repository for your book<a class="headerlink" href="#create-an-online-repository-for-your-book" title="Permalink to this headline">#</a></h2>
+<p>First, log in to GitHub, then go to the “create a new repository” page: <a class="reference external" href="https://github.com/new">https://github.com/new</a>. Next, give your online repository a name and a description. Make your repository public and do not initialize it with a README file, then click “Create repository”.</p>
+<blockquote>
+<div><p>warning:</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>make sure that you log in <a class="reference external" href="http://github.com">github.com</a> site first.</strong></p></li>
+<li><p>you can watch the youtube by Chris Holdgraf which is really good becasue he is one of the founders/major contributors but the video drops some cmd commands that <a class="reference external" href="http://jupyterbook.org">jupyterbook.org</a> instruction. <a class="reference external" href="https://jupyterbook.org">His video is here.</a></p></li>
+</ul>
+<p>Now, clone the (currently empty) online repository to a location on your local computer. You can do this via the command line with: However, the question is why not directly load the original directory to the GitHub site</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">my</span><span class="o">-</span><span class="n">org</span><span class="o">&gt;/&lt;</span><span class="n">my</span><span class="o">-</span><span class="n">repository</span><span class="o">-</span><span class="n">name</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Copy all of your book files and folders into this newly cloned repository. For example, if you created your book locally with jupyter-book create mylocalbook and your new repository is called myonlinebook, you could do this via the command line with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="n">mylocalbook</span><span class="o">/*</span> <span class="n">myonlinebook</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>Now you need to sync your local and remote (i.e., online) repositories. You can do this with the following commands:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> myonlinebook
+git add ./*
+git commit -m <span class="s2">&quot;adding my first book!&quot;</span>
+git push
+</pre></div>
+</div>
+</section>
+<section id="publish-your-book-online-with-github-pages">
+<h2>Publish your book online with GitHub Pages<a class="headerlink" href="#publish-your-book-online-with-github-pages" title="Permalink to this headline">#</a></h2>
+<p>We have just pushed the source files for our book into our GitHub repository. This makes it publicly accessible for you or others to see. So, it is saying that pushing all those source files into the GitHub site alone is not going to be sufficient. You need to go through <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> process.</p>
+<p>Next, we’ll publish the build <em>artifact</em> of our book online, so that it is rendered as a website.</p>
+<p>The easiest way to use GitHub Pages with your built HTML is to use the <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> package. <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> is a lightweight Python package that makes it easy to push HTML content to a GitHub repository.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> works by copying all of the contents of your built book (i.e., the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder) to a branch of your repository called gh-pages, and pushes it to GitHub. The gh-pages branch will be created and populated automatically for you by ghp-import. To use <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> to host your book online with GitHub Pages follow the steps below:</p>
+<p>Note</p>
+<p>Before performing the below steps, ensure that HTML has been built for each page of your book (see the previous section). There should be a collection of HTML files in your book’s <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder.</p>
+<p>Install ghp-import</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ghp</span><span class="o">-</span><span class="kn">import</span>
+</pre></div>
+</div>
+<p>Update the settings for your GitHub pages site:</p>
+<p>a. Use the gh-pages branch to host your website.</p>
+<p>b. Choose root directory / if you’re building the book in it’s own repository. Choose /docs directory if you’re building documentation with jupyter-book.</p>
+<p>From the main branch of your book’s root directory (which should contain the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder) call <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> and point it to your HTML files, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ghp</span><span class="o">-</span><span class="kn">import</span> <span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">p</span> <span class="o">-</span><span class="n">f</span> <span class="n">_build</span><span class="o">/</span><span class="n">html</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Warning</p>
+</div></blockquote>
+<p>Make sure that you included the <code class="docutils literal notranslate"><span class="pre">-n</span></code> - this tells GitHub not to build your book with ==Jekyll==, which we don’t want because our HTML is already built! If you do not do this you may see 404 not found for your deployed content.</p>
+<p>Typically after a few minutes your site should be viewable online at a url such as: <code class="docutils literal notranslate"><span class="pre">https://&lt;user&gt;.github.io/&lt;myonlinebook&gt;/</span></code>. If not, check your repository settings under <code class="docutils literal notranslate"><span class="pre">Options</span> <span class="pre">-&gt;</span> <span class="pre">GitHub</span> <span class="pre">Pages</span></code> to ensure that the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch is configured as the build source for <code class="docutils literal notranslate"><span class="pre">GitHub</span> <span class="pre">Page</span></code>s and/or to find the url address GitHub is building for you.</p>
+<p>To update your online book, make changes to your book’s content on the main branch of your repository, re-build your book with <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">mybookname/</span></code> and then use <code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">mylocalbook/_build/html</span></code> as before to push the newly built HTML to the gh-pages branch.</p>
+<hr class="docutils" />
+<hr class="docutils" />
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">mc</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+<p>X^2^
+$<span class="math notranslate nohighlight">\(\sqrt{k}\)</span><span class="math notranslate nohighlight">\(
+Inline: \)</span>\sqrt{k}$</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Left</p></th>
+<th class="text-align:center head"><p>Center</p></th>
+<th class="text-align:right head"><p>Right</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>1</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:right"><p>C</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>2</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:right"><p>D</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Type some Markdown on the left</p></li>
+<li><p>See HTML in the right</p></li>
+<li><p>✨Magic ✨</p></li>
+<li></li>
+</ul>
+</section>
+<section id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Import a HTML file and watch it magically convert to Markdown</p></li>
+<li><p>Drag and drop images (requires your Dropbox account be linked)</p></li>
+<li><p>Import and save files from GitHub, Dropbox, Google Drive and One Drive</p></li>
+<li><p>Drag and drop markdown and HTML files into Dillinger</p></li>
+<li><p>Export documents as Markdown, HTML and PDF</p></li>
+</ul>
+<p>Markdown is a lightweight markup language based on the formatting conventions
+that people naturally use in email.
+As <a class="reference external" href="http://daringfireball.net">John Gruber</a> writes on the <a class="reference external" href="http://daringfireball.net/projects/markdown/">Markdown site</a></p>
+<blockquote>
+<div><p>The overriding design goal for Markdown’s
+formatting syntax is to make it as readable
+as possible. The idea is that a
+Markdown-formatted document should be
+publishable as-is, as plain text, without
+looking like it’s been marked up with tags
+or formatting instructions.</p>
+</div></blockquote>
+<p>This text you see here is *actually- written in Markdown! To get a feel
+for Markdown’s syntax, type some text into the left window and
+watch the results in the right.</p>
+</section>
+<section id="tech">
+<h2>Tech<a class="headerlink" href="#tech" title="Permalink to this headline">#</a></h2>
+<p>Dillinger uses a number of open source projects to work properly:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://angularjs.org">AngularJS</a> - HTML enhanced for web apps!</p></li>
+<li><p><a class="reference external" href="http://ace.ajax.org">Ace Editor</a> - awesome web-based text editor</p></li>
+<li><p><a class="reference external" href="https://github.com/markdown-it/markdown-it">markdown-it</a> - Markdown parser done right. Fast and easy to extend.</p></li>
+<li><p><a class="reference external" href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> - great UI boilerplate for modern web apps</p></li>
+<li><p><a class="reference external" href="http://nodejs.org">node.js</a> - evented I/O for the backend</p></li>
+<li><p><a class="reference external" href="http://expressjs.com">Express</a> - fast node.js network app framework <a class="reference external" href="http://twitter.com/tjholowaychuk">&#64;tjholowaychuk</a></p></li>
+<li><p><a class="reference external" href="http://gulpjs.com">Gulp</a> - the streaming build system</p></li>
+<li><p><a class="reference external" href="https://breakdance.github.io/breakdance/">Breakdance</a> - HTML
+to Markdown converter</p></li>
+<li><p><a class="reference external" href="http://jquery.com">jQuery</a> - duh</p></li>
+</ul>
+<p>And of course Dillinger itself is open source with a <a class="reference external" href="https://github.com/joemccann/dillinger">public repository</a>
+on GitHub.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<p>Dillinger requires <a class="reference external" href="https://nodejs.org/">Node.js</a> v10+ to run.</p>
+<p>Install the dependencies and devDependencies and start the server.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> dillinger
+npm i
+node app
+</pre></div>
+</div>
+<p>For production environments…</p>
+</section>
+<section id="plugins">
+<h2>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">#</a></h2>
+<p>Dillinger is currently extended with the following plugins.
+Instructions on how to use them in your own application are linked below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Plugin</p></th>
+<th class="head"><p>README</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Dropbox</p></td>
+<td><p><a class="reference external" href="https://github.com/joemccann/dillinger/tree/master/plugins/dropbox/README.md">plugins/dropbox/README.md</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>GitHub</p></td>
+<td><p><a class="reference external" href="https://github.com/joemccann/dillinger/tree/master/plugins/github/README.md">plugins/github/README.md</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Google Drive</p></td>
+<td><p><a class="reference external" href="https://github.com/joemccann/dillinger/tree/master/plugins/googledrive/README.md">plugins/googledrive/README.md</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>OneDrive</p></td>
+<td><p><a class="reference external" href="https://github.com/joemccann/dillinger/tree/master/plugins/onedrive/README.md">plugins/onedrive/README.md</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Medium</p></td>
+<td><p><a class="reference external" href="https://github.com/joemccann/dillinger/tree/master/plugins/medium/README.md">plugins/medium/README.md</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Google Analytics</p></td>
+<td><p><a class="reference external" href="https://github.com/RahulHP/dillinger/blob/master/plugins/googleanalytics/README.md">plugins/googleanalytics/README.md</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">#</a></h2>
+<p>MIT</p>
+<p><strong>Free Software, Hell Yeah!</strong></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="myvitae.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Vitae</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The Jupyter Book Community<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
